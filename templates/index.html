@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-<title>Sensive Blog - Home</title>
-{% endblock %}
+    {% block title %}
+    <title>Sensive Blog - Home</title>
+    {% endblock %}
 
-{% block content %}
-{% load static %}
+    {% block content %}
+    {% load static %}
     <!--================ Blog slider start =================-->
     <section>
       <div class="container">
@@ -15,9 +15,9 @@
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
                 {% if post.image_url %}
-                <img class="card-img rounded-0" src={{post.image_url}} alt="">
+                <img class="card-img rounded-0" src={{post.image_url}} alt="Фото блога">
                 {% else %}
-                <img class="card-img rounded-0" src='{% static "img/banner/blog.png" %}' alt="">
+                <img class="card-img rounded-0" src='{% static "img/banner/blog.png" %}' alt="Фото блога">
                 {% endif %}  
               </div>
               <div class="blog__slide__content">
@@ -41,14 +41,14 @@
             <div class="single-recent-blog-post">
               <div class="thumb">
                 {% if post.image_url %}
-                <img class="img-fluid" src={{post.image_url}} alt="">
+                <img class="img-fluid" src={{post.image_url}} alt="Фото блога">
                 {% else %}
-                <img class="img-fluid" src='{% static "img/banner/blog.png" %}' alt="">
+                <img class="img-fluid" src='{% static "img/banner/blog.png" %}' alt="Фото блога">
                 {% endif %}                
                 <ul style='max-width: 550px;' class="thumb-info">
                   <li><a href='{% url "post_detail" slug=post.slug %}'><i class="ti-user"></i>{{post.author}}</a></li>
                   <li><a href='{% url "post_detail" slug=post.slug %}'><i class="ti-notepad"></i>{{post.published_at}}</a></li>
-                  <li><a href='{% url "post_detail" slug=post.slug %}'><i class="ti-themify-favicon"></i>{{post.comments_amount}}</a></li>
+                  <li><a href='{% url "post_detail" slug=post.slug %}'><i class="ti-themify-favicon"></i>{{post.comments_amount}} Comments</a></li>
                 </ul>
               </div>
               <div class="details mt-20">
@@ -110,6 +110,5 @@
       </div>
     </section>
     <!--================ End Blog Post Area =================-->
-  </main>
 
-{% endblock %}
+    {% endblock %}
