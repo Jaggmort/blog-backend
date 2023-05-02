@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% load staticfiles %}
     {% block title %}   
     {% endblock %}
     <link rel="icon" href='{% static "img/favicon.png" %}' type="image/png">
@@ -48,13 +47,8 @@
       <div class="container">
         <div class="hero-banner hero-banner--sm">
           <div class="hero-banner__content">
-            <h1>Blog details</h1>
-            <nav aria-label="breadcrumb" class="banner-breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href='{% url "index" %}'>Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
-              </ol>
-            </nav>
+            {% block banner %}   
+            {% endblock %}
           </div>
         </div>
       </div>
